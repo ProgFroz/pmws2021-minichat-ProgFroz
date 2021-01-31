@@ -38,6 +38,7 @@ public class ClientScreenController {
         clientSendButton.setOnAction(this::clientSendButtonOnClick);
 
         clientTextField = (TextField) view.lookup("#clientTextField");
+        clientTextField.setPromptText("Enter Message...");
 
         this.clientUserList = (ListView<User>) view.lookup("#clientUserList");
 //        this.clientUserList.setCellFactory(new AlternateServerUserListCellFactory());
@@ -64,10 +65,11 @@ public class ClientScreenController {
 
     // Additional methods
     private void clientLeaveButtonOnClick(ActionEvent actionEvent) {
+        System.out.println("Leaving Client");
         StageManager.showStartScreen();
     }
 
     private void clientSendButtonOnClick(ActionEvent actionEvent) {
-        // Send Message
+        System.out.println(this.clientTextField.getText());
     }
 }

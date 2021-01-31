@@ -1,6 +1,7 @@
 package de.uniks.pmws2021.chat.controller;
 
 import de.uniks.pmws2021.chat.ChatEditor;
+import de.uniks.pmws2021.chat.StageManager;
 import de.uniks.pmws2021.chat.model.User;
 import de.uniks.pmws2021.chat.util.AlternateServerUserListCellFactory;
 import javafx.collections.FXCollections;
@@ -50,15 +51,16 @@ public class ServerScreenController {
     
     // Additional methods
     private void disconnectAllButtonOnClick(ActionEvent actionEvent) {
-
+        System.out.println("Disconnect All");
     }
 
     private void disconnectOneButtonOnClick(ActionEvent actionEvent) {
-
+        System.out.println("Disconnect One");
     }
 
     private void closeServerOnClick(ActionEvent actionEvent) {
-
+        System.out.println("Closing Server");
+        StageManager.showStartScreen();
     }
 
     private void onServerUserListDoubleClicked(MouseEvent mouseEvent) {

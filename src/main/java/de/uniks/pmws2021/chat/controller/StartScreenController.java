@@ -5,6 +5,7 @@ import de.uniks.pmws2021.chat.StageManager;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextInputDialog;
 
 public class StartScreenController {
     private Parent view;
@@ -29,11 +30,20 @@ public class StartScreenController {
         // Clear references
         // Clear action listeners
         serverButton.setOnAction(null);
+        clientButton.setOnAction(null);
     }
 
     // Additional methods
     private void clientButtonOnClick(ActionEvent actionEvent) {
-        StageManager.showClientScreen();
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Enter Username");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Username");
+
+        dialog.showAndWait().ifPresent((name) -> {
+            editor.enterChat(name);
+            StageManager.showClientScreen();
+        });
     }
 
     private void serverButtonOnClick(ActionEvent actionEvent) {
