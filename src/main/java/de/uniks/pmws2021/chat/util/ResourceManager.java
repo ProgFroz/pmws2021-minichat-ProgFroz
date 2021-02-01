@@ -64,9 +64,9 @@ public class ResourceManager {
         List<User> oldUsers = loadServerUsers();
         
         // delete existing hero with the same name as the victor
-        oldUsers.removeIf(oldHero -> oldHero.getName().equals(user.getName()));
+        oldUsers.removeIf(oldUser -> oldUser.getName().equals(user.getName()));
         // add copy of victor to list
-        User toSave = new User().setIp(user.getIp()).setName(user.getName());
+        User toSave = new User().setIp(user.getIp()).setName(user.getName()).setStatus(user.getStatus());
         // serialize as yaml
 
         oldUsers.add(toSave);
