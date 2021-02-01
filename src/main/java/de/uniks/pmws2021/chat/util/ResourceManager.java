@@ -31,7 +31,7 @@ public class ResourceManager {
         }
     }
 
-    public static List<User> loadAllUsers() {
+    public static List<User> loadServerUsers() {
         List<User> result = new ArrayList<>();
         try {
             if (!Files.exists(USERS_FILE)) {
@@ -59,9 +59,9 @@ public class ResourceManager {
         return result;
     }
 
-    public static void saveUser(User user) {
+    public static void saveServerUsers(User user) {
         // load all existing heroes
-        List<User> oldUsers = loadAllUsers();
+        List<User> oldUsers = loadServerUsers();
         
         // delete existing hero with the same name as the victor
         oldUsers.removeIf(oldHero -> oldHero.getName().equals(user.getName()));
