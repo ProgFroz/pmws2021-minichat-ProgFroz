@@ -67,6 +67,7 @@ public class ResourceManager {
         oldUsers.removeIf(oldUser -> oldUser.getName().equals(user.getName()));
         // add copy of victor to list
         User toSave = new User().setIp(user.getIp()).setName(user.getName()).setStatus(user.getStatus());
+
         // serialize as yaml
 
         oldUsers.add(toSave);

@@ -1,6 +1,7 @@
 package de.uniks.pmws2021.model.chat.util;
 
 import de.uniks.pmws2021.chat.constants.Status;
+import de.uniks.pmws2021.chat.model.Chat;
 import de.uniks.pmws2021.chat.model.User;
 import de.uniks.pmws2021.chat.util.ResourceManager;
 import org.junit.Assert;
